@@ -1,0 +1,41 @@
+﻿@inject NavigationManager Navigation
+@inject IStringLocalizer<App> Loc
+@using System.Globalization
+
+<span>
+    @Loc[nameof(ResourceStrings.Language)]:&nbsp;
+    <select @bind="Culture">
+        @foreach (var culture in LocalizerSettings.SupportedCulturesWithName)
+        {
+            <option value="@culture.Culture">@culture.Name</option>
+        }
+    </select>
+</span>
+
+@code
+{
+    protected override void OnInitialized()
+    {
+        Culture = CultureInfo.CurrentCulture;
+    }
+
+    private CultureInfo Culture
+    {
+        get => CultureInfo.CurrentCulture;
+        set
+        {
+            if (CultureInfo.CurrentCulture != value)
+            {
+                var uri = new Uri(Navigation.Uri)
+                    .GetComponents(UriComponents.PathAndQuery, UriFormat.Unescaped);
+                var cultureEscaped = Uri.EscapeDataString(value.Name);
+                var uriEscaped = Uri.EscapeDataString(uri);
+
+                Navigation.NavigateTo(
+                    $"Culture/Set?culture={cultureEscaped}&redirectUri={uriEscaped}",
+                    forceLoad: true);
+            }
+        }
+    }
+
+}

@@ -1,0 +1,12 @@
+﻿@inject IStringLocalizer<App> Loc
+@inject IJSRuntime jsRuntime
+@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<h1>@Loc[nameof(ResourceStrings.HomeTitle)]</h1>
+
+@Loc[nameof(ResourceStrings.HomeSubtitle)]
+
+<SurveyPrompt Title="@Loc[nameof(ResourceStrings.SurveyPromptTitle)]" />
+
