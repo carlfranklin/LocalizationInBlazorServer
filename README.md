@@ -2,6 +2,8 @@
 
 In this episode, we are going to build a **Blazor Server** application, and we are going to add localization support.
 
+To learn how to add localization in a **Blazor WebAssembly** application, see my repo at https://github.com/carlfranklin/LocalizationInBlazor
+
 We will make use of the `Microsoft.Extensions.Localization` NuGet package, to leverage localization services, such as the `AddLocalization` service, and the `IStringLocalizer` interface.
 
 We will create an enumeration for all of our resource strings and use them in our app to avoid magic string typos.
