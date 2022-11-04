@@ -958,7 +958,7 @@ If you close the app and restart it again, you'll notice the language preference
 
 ## Summary
 
-In this episode, we built a **Hosted Blazor WebAssembly** application, and we added localization support.
+In this episode, we built a **Blazor Server** application, and we added localization support.
 
 We made use of the `Microsoft.Extensions.Localization NuGet` package, to leverage localization services, and used `AddLocalization`, and the `IStringLocalizer` interface, to accomplish that.
 
