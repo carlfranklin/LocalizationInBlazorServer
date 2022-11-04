@@ -762,8 +762,6 @@ The workflow will be:
 3. We redirect the user back to the original page.
 4. The application shows on the correct language.
 
-Again, we will be working solely in the Client project.
-
 Add the following class files to the project:
 
 *CultureWithName.cs*:
